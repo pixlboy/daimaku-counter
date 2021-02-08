@@ -2,11 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Thanks from './Thanks';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import NavBar from './NavBar';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <>
+      <Router>
+      <NavBar></NavBar>
+      <div className="container">
+        <Switch>
+          <Route path="/thanks" component={Thanks}></Route>
+          <Route path="/" component={App}></Route>         
+        </Switch>
+      </div>
+      </Router>
+    </>
   </React.StrictMode>,
   document.getElementById('root')
 );
