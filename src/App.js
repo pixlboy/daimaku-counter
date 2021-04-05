@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     let localMembers = [];
-    const collection = firestore.collection('members').get();
+    const collection = firestore.collection('members').orderBy('name').get();
     collection.then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         localMembers.push(doc.data())
@@ -64,6 +64,28 @@ function App() {
         console.log("Error getting documents: ", error);
     });
   }
+
+  // const addMember = (member) => {
+  //   const collection = firestore.collection('members');
+  //   collection.add({
+  //       name: member,
+  //       count: 0
+  //     })
+  //     .then(function(docRef) {
+  //       console.log("Document written with ID: ", docRef.id);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error setting documents: ", error);
+  //     });
+  // }
+
+  // const addAllMembers = () => {
+  //   const members = []
+  //   members.forEach(element => {
+  //     addMember(element);
+  //   });
+  // }
+
 
   let isEnabled = name && time && time > 0 && (password === process.env.REACT_APP_PASS_WORD);
 
