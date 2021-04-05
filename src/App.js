@@ -1,7 +1,5 @@
 import './App.css';
 import {useState, useEffect} from 'react';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -67,7 +65,7 @@ function App() {
     });
   }
 
-  let isDisabled = !name || !time || (password !== process.env.REACT_APP_PASS_WORD);
+  let isEnabled = name && time && time > 0 && (password === process.env.REACT_APP_PASS_WORD);
 
   return (
         <>
@@ -88,11 +86,11 @@ function App() {
             </div>
             <p>and I want to contribute</p>
             <TextField variant="outlined" type="number" value={time} onChange={handleInput} placeholder="Count in minutes" className="time-input" />
-            <p>minutes towards March 16th Campaign.</p>
+            <p>minutes towards May 3rd Campaign.</p>
         </div>
         <div className="footer">
         <TextField variant="outlined" type="password" value={password} onChange={handlePassword} placeholder="Password" className="custom-input" />
-        <Button variant="contained" onClick={handleSubmit} color="primary" disabled={isDisabled}>Contribute</Button>
+        <Button variant="contained" onClick={handleSubmit} color="primary" disabled={!isEnabled}>Contribute</Button>
         </div>
     </>
   );

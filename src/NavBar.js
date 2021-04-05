@@ -13,7 +13,7 @@ function NavBar() {
             <AppBar position="static">
             <Toolbar variant="dense">
             <Typography variant="subtitle2" color="inherit">
-                <Link to="/">Munneshwara - Daimaku Count</Link>
+                <Link to="/">Munneshwara - Daimaku</Link>
             </Typography>
             <div className="counter"><Counter></Counter></div>
             </Toolbar>
