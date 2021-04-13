@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './App.css';
 import App from './App';
 import Thanks from './Thanks';
 import reportWebVitals from './reportWebVitals';
@@ -10,6 +10,7 @@ import {
   Route
 } from "react-router-dom";
 import NavBar from './NavBar';
+import Footer from './Footer';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.render(
           <Route path="/" component={App}></Route>         
         </Switch>
       </div>
+      <Footer></Footer>
       </Router>
     </>
   </React.StrictMode>,

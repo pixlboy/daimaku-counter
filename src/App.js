@@ -1,4 +1,3 @@
-import './App.css';
 import {useState, useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
@@ -110,7 +109,7 @@ function App() {
             <TextField variant="outlined" type="number" value={time} onChange={handleInput} placeholder="Count in minutes" className="time-input" />
             <p>minutes towards May 3rd Campaign.</p>
         </div>
-        <div className="footer">
+        <div className="action-bar">
         <TextField variant="outlined" type="password" value={password} onChange={handlePassword} placeholder="Password" className="custom-input" />
         <Button variant="contained" onClick={handleSubmit} color="primary" disabled={!isEnabled}>Contribute</Button>
         </div>
