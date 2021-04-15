@@ -40,6 +40,9 @@ function App() {
   }
   
   const handleSubmit = () => {
+    if(!navigator.onLine){
+      return false;
+    }
     const collection = firestore.collection('members').where('name', '==', name);
     collection.get()
       .then((querySnapshot) => {

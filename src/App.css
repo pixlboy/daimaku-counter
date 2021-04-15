@@ -78,3 +78,13 @@ a{
 .counter{
   float: right
 }
+
+.no-internet{
+  position: absolute;
+  bottom:32px;
+  padding: 2px;
+  width:100%;
+  font-size: .8rem;
+  text-align: center;
+  background-color: red;
+}
